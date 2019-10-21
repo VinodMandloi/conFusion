@@ -1,0 +1,44 @@
+<div>
+
+<div class="part1_2" style="width:45%;float:left;">
+
+    <div fxFlex *ngIf="selectedDish1">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h3>{{selectedDish1.name | uppercase}}</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src={{selectedDish1.image}} alt={{selectedDish1.name}}>
+          <mat-card-content>
+            <p>{{selectedDish1.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+</div>
+
+<div >
+<div class="part3" style="width:50%;float:right;">
+  <mat-card>
+      <mat-grid-tile-header>
+          <h3>Comments</h3>
+        </mat-grid-tile-header>
+            <mat-grid-list cols="1" rowHeight="160px" >     
+                <mat-grid-tile *ngFor="let dish of comments">
+                  <mat-card-content>
+                    <p>{{dish.comment}}</p>
+                    <p>{{dish.rating}}</p>
+                    <p>-- {{dish.author }} <span>{{ '1288323623006' | date:'MMM, dd' }}</span></p>
+                  </mat-card-content>
+                </mat-grid-tile>
+              </mat-grid-list> 
+  </mat-card>   
+</div>
+</div>
+
+</div>
