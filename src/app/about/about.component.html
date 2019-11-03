@@ -54,7 +54,7 @@
   </div>
 
 
-  <mat-list>
+  <mat-list *ngIf="corporate_leaders">
     <h3>Corporate Leadership</h3>
     <mat-list-item *ngFor="let leaders of corporate_leaders">
       <img matListAvatar src={{leaders.image}} alt="leaders.name">
@@ -67,3 +67,6 @@
       </p>
     </mat-list-item>
   </mat-list>
+  <div [hidden]="corporate_leaders">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
