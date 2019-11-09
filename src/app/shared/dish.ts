@@ -9,5 +9,4 @@ export class Dish {
     price: string;
     description: string;
     comments:Comment[];
-  //comment_values: any;
 }
