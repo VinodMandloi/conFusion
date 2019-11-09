@@ -54,7 +54,7 @@
   </div>
 
 
-  <mat-list *ngIf="corporate_leaders">
+  <mat-list *ngIf="corporate_leaders" [@expand]>
     <h3>Corporate Leadership</h3>
     <mat-list-item *ngFor="let leaders of corporate_leaders">
       <img matListAvatar src="{{ baseURL + leaders.image }}" alt="leaders.name">
