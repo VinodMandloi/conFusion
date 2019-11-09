@@ -42,19 +42,13 @@
         <span> --{{comment.author}} {{comment.date | date}}</span>
       </p>
     </mat-list-item>
-    <mat-list-item>
-        <h4 matLine>{{comment_values.comment}}</h4>
-        <p matLine>{{comment_values.rating}} stars</p>
-        <p matLine>
-          <span> --{{comment_values.name}} {{comment_values.date | date:'MMM,dd,yyyy'}}</span>
-        </p>
-    </mat-list-item>
+  
     <mat-card>
         <form novalidate [formGroup]="commentForm" #fform="ngForm" (ngSubmit)="onSubmit()">
             <p>
               <mat-form-field class="half-width">
-                <input matInput formControlName="name" placeholder="Name" type="text">
-                <mat-error *ngIf="formErrors.name">{{formErrors.name}} </mat-error>
+                <input matInput formControlName="author" placeholder="Name" type="text">
+                <mat-error *ngIf="formErrors.author">{{formErrors.author}} </mat-error>
               </mat-form-field>
             </p>
             <p>
