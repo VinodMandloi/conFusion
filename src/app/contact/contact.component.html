@@ -80,6 +80,39 @@
       </p>
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
     </form>
+
+    <!--<div [hidden]="!spinnerVisibility">
+      <h3>Submitting Form</h3>
+    <mat-spinner></mat-spinner>
+  </div>-->
+  <div *ngIf="spinnerVisibility">
+    <h3>Submitting Form</h3>
+  <mat-spinner></mat-spinner>
+</div>
+  <div *ngIf="feedbackcopy && detailVisibility" [@expand]>
+    <h3>Your Submission</h3>
+    <p>
+      <span>First Name:&nbsp;{{ feedbackcopy.firstname }}</span>
+    </p>
+    <p>
+      <span>Last Name:&nbsp;{{ feedbackcopy.lastname }}</span>
+    </p>
+    <p>
+      <span>Tel. Number:&nbsp;{{ feedbackcopy.telnum }}</span>
+    </p>
+    <p>
+      <span>Email:&nbsp;{{ feedbackcopy.email }}</span>
+    </p>
+    <p>
+      <span>Contact You?:&nbsp;{{ feedbackcopy.agree }}</span>
+    </p>
+    <p>
+      <span>How?:&nbsp;{{ feedbackcopy.contacttype }}</span>
+    </p>
+    <p>
+      <span>Feedback:&nbsp;{{ feedbackcopy.message }}</span>
+    </p>      
   </div>
+</div>
 
 </div>
